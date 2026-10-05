@@ -6,13 +6,11 @@ import csv
 import glob
 import json
 import os
-from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import Dict
 
 import numpy as np
 
 from failure_prediction.adaptive_v1_analysis import auroc, wilson
-from failure_prediction.audit_residual_control import spearman
 from failure_prediction.final_adaptive import (
     ESC_TARGETS,
     N_BOOT,
@@ -26,6 +24,14 @@ from failure_prediction.final_adaptive import (
     recovered,
     topk_mask,
 )
+
+
+def spearman(x, y) -> float:
+    rx = np.argsort(np.argsort(np.asarray(x, dtype=float), kind="mergesort"))
+    ry = np.argsort(np.argsort(np.asarray(y, dtype=float), kind="mergesort"))
+    if rx.size < 2:
+        return float("nan")
+    return float(np.corrcoef(rx, ry)[0, 1])
 
 OUT = "outputs/failure_prediction/nonbb_radial_formal"
 CFG_PATH = os.path.join(OUT, "radial_90_8_frozen_config.json")
