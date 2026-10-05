@@ -1,0 +1,950 @@
+{
+  "0.006": {
+    "bp_flag": {
+      "n": 20000,
+      "n_converged": 1835,
+      "frac_converged": 0.09175,
+      "n_not_converged": 18165,
+      "frac_not_converged": 0.90825,
+      "n_fail_osd0": 95,
+      "n_fail_among_converged": 0,
+      "n_fail_among_not_converged": 95,
+      "ler_if_converged": 0.0,
+      "ler_if_not_converged": 0.005229837599779796,
+      "auroc_bp_nonconv_fail": [
+        0.5460939462446621,
+        0.54406804577885,
+        0.5482327627317659
+      ],
+      "auroc_bp_nonconv_ben": [
+        0.54605692485317,
+        0.5440111545865013,
+        0.5481343412104193
+      ],
+      "auroc_dh_fail": [
+        0.9581337669720646,
+        0.9406592887501416,
+        0.9731821696863407
+      ],
+      "auroc_dh_fail_on_nonconv": [
+        0.9538822707016573,
+        0.9361407458066549,
+        0.9686310969775166
+      ],
+      "natural_escalate_nonconv": {
+        "f_esc": 0.90825,
+        "ler_k1000": 0.00115,
+        "ler_ci": [
+          0.000766453882701502,
+          0.0017251475304990503
+        ],
+        "rec": 0.9729729729729729,
+        "ler_osd0": 0.00475,
+        "ler_k1000_all": 0.00115
+      },
+      "note": "Score is 1 - BP@20.converge (non-convergence = high risk). The flag is binary and not-converged is the majority class at these p, so it cannot implement a 10-30% budget."
+    },
+    "holdout": {
+      "folds": [
+        {
+          "fold": "seeds_first20_cal",
+          "n_cal": 10000,
+          "n_test": 10000,
+          "cal_seeds": [
+            3000,
+            3001,
+            3002,
+            3003,
+            3004,
+            3005,
+            3006,
+            3007,
+            3008,
+            3009,
+            3010,
+            3011,
+            3012,
+            3013,
+            3014,
+            3015,
+            3016,
+            3017,
+            3018,
+            3019
+          ],
+          "test_seeds": [
+            3020,
+            3021,
+            3022,
+            3023,
+            3024,
+            3025,
+            3026,
+            3027,
+            3028,
+            3029,
+            3030,
+            3031,
+            3032,
+            3033,
+            3034,
+            3035,
+            3036,
+            3037,
+            3038,
+            3039
+          ],
+          "points": [
+            {
+              "f_target": 0.1,
+              "tau_cal": 18.0,
+              "f_esc_test": 0.1039,
+              "ler_holdout": 0.0016,
+              "ler_holdout_ci": [
+                0.0009851240465054562,
+                0.0025976595913322323
+              ],
+              "rec_holdout": 0.8648648648648649,
+              "ler_oracle_topk": 0.0018,
+              "ler_oracle_ci": [
+                0.0011389185739970834,
+                0.002843711458849498
+              ],
+              "rec_oracle": 0.8108108108108109,
+              "delta_ler_holdout_minus_oracle": -0.00019999999999999987,
+              "n_test": 10000,
+              "n_fail_holdout": 16,
+              "ler_osd0_test": 0.0048,
+              "ler_full_test": 0.0011
+            },
+            {
+              "f_target": 0.2,
+              "tau_cal": 14.0,
+              "f_esc_test": 0.2086,
+              "ler_holdout": 0.0015,
+              "ler_holdout_ci": [
+                0.0009092536302792232,
+                0.0024736068100540184
+              ],
+              "rec_holdout": 0.8918918918918919,
+              "ler_oracle_topk": 0.0015,
+              "ler_oracle_ci": [
+                0.0009092536302792232,
+                0.0024736068100540184
+              ],
+              "rec_oracle": 0.8918918918918919,
+              "delta_ler_holdout_minus_oracle": 0.0,
+              "n_test": 10000,
+              "n_fail_holdout": 15,
+              "ler_osd0_test": 0.0048,
+              "ler_full_test": 0.0011
+            },
+            {
+              "f_target": 0.3,
+              "tau_cal": 11.0,
+              "f_esc_test": 0.3311,
+              "ler_holdout": 0.0014,
+              "ler_holdout_ci": [
+                0.0008341542630379929,
+                0.0023487829797908017
+              ],
+              "rec_holdout": 0.918918918918919,
+              "ler_oracle_topk": 0.0014,
+              "ler_oracle_ci": [
+                0.0008341542630379929,
+                0.0023487829797908017
+              ],
+              "rec_oracle": 0.918918918918919,
+              "delta_ler_holdout_minus_oracle": 0.0,
+              "n_test": 10000,
+              "n_fail_holdout": 14,
+              "ler_osd0_test": 0.0048,
+              "ler_full_test": 0.0011
+            }
+          ]
+        },
+        {
+          "fold": "seeds_last20_cal",
+          "n_cal": 10000,
+          "n_test": 10000,
+          "cal_seeds": [
+            3020,
+            3021,
+            3022,
+            3023,
+            3024,
+            3025,
+            3026,
+            3027,
+            3028,
+            3029,
+            3030,
+            3031,
+            3032,
+            3033,
+            3034,
+            3035,
+            3036,
+            3037,
+            3038,
+            3039
+          ],
+          "test_seeds": [
+            3000,
+            3001,
+            3002,
+            3003,
+            3004,
+            3005,
+            3006,
+            3007,
+            3008,
+            3009,
+            3010,
+            3011,
+            3012,
+            3013,
+            3014,
+            3015,
+            3016,
+            3017,
+            3018,
+            3019
+          ],
+          "points": [
+            {
+              "f_target": 0.1,
+              "tau_cal": 18.0,
+              "f_esc_test": 0.1042,
+              "ler_holdout": 0.0014,
+              "ler_holdout_ci": [
+                0.0008341542630379929,
+                0.0023487829797908017
+              ],
+              "rec_holdout": 0.8918918918918919,
+              "ler_oracle_topk": 0.0014,
+              "ler_oracle_ci": [
+                0.0008341542630379929,
+                0.0023487829797908017
+              ],
+              "rec_oracle": 0.8918918918918919,
+              "delta_ler_holdout_minus_oracle": 0.0,
+              "n_test": 10000,
+              "n_fail_holdout": 14,
+              "ler_osd0_test": 0.0047,
+              "ler_full_test": 0.001
+            },
+            {
+              "f_target": 0.2,
+              "tau_cal": 14.0,
+              "f_esc_test": 0.2096,
+              "ler_holdout": 0.0012,
+              "ler_holdout_ci": [
+                0.0006865974508135608,
+                0.0020964933970063406
+              ],
+              "rec_holdout": 0.945945945945946,
+              "ler_oracle_topk": 0.0012,
+              "ler_oracle_ci": [
+                0.0006865974508135608,
+                0.0020964933970063406
+              ],
+              "rec_oracle": 0.945945945945946,
+              "delta_ler_holdout_minus_oracle": 0.0,
+              "n_test": 10000,
+              "n_fail_holdout": 12,
+              "ler_osd0_test": 0.0047,
+              "ler_full_test": 0.001
+            },
+            {
+              "f_target": 0.3,
+              "tau_cal": 11.0,
+              "f_esc_test": 0.3351,
+              "ler_holdout": 0.001,
+              "ler_holdout_ci": [
+                0.0005432800768105723,
+                0.0018399643760004356
+              ],
+              "rec_holdout": 1.0,
+              "ler_oracle_topk": 0.001,
+              "ler_oracle_ci": [
+                0.0005432800768105723,
+                0.0018399643760004356
+              ],
+              "rec_oracle": 1.0,
+              "delta_ler_holdout_minus_oracle": 0.0,
+              "n_test": 10000,
+              "n_fail_holdout": 10,
+              "ler_osd0_test": 0.0047,
+              "ler_full_test": 0.001
+            }
+          ]
+        }
+      ],
+      "mean_over_folds": [
+        {
+          "f_target": 0.1,
+          "tau_cal_mean": 18.0,
+          "f_esc_test_mean": 0.10405,
+          "ler_holdout_mean": 0.0015,
+          "ler_oracle_mean": 0.0015999999999999999,
+          "rec_holdout_mean": 0.8783783783783784,
+          "rec_oracle_mean": 0.8513513513513513,
+          "delta_ler_mean": -9.999999999999994e-05
+        },
+        {
+          "f_target": 0.2,
+          "tau_cal_mean": 14.0,
+          "f_esc_test_mean": 0.2091,
+          "ler_holdout_mean": 0.00135,
+          "ler_oracle_mean": 0.00135,
+          "rec_holdout_mean": 0.918918918918919,
+          "rec_oracle_mean": 0.918918918918919,
+          "delta_ler_mean": 0.0
+        },
+        {
+          "f_target": 0.3,
+          "tau_cal_mean": 11.0,
+          "f_esc_test_mean": 0.3331,
+          "ler_holdout_mean": 0.0012000000000000001,
+          "ler_oracle_mean": 0.0012000000000000001,
+          "rec_holdout_mean": 0.9594594594594594,
+          "rec_oracle_mean": 0.9594594594594594,
+          "delta_ler_mean": 0.0
+        }
+      ]
+    }
+  },
+  "0.007": {
+    "bp_flag": {
+      "n": 20000,
+      "n_converged": 611,
+      "frac_converged": 0.03055,
+      "n_not_converged": 19389,
+      "frac_not_converged": 0.96945,
+      "n_fail_osd0": 398,
+      "n_fail_among_converged": 0,
+      "n_fail_among_not_converged": 398,
+      "ler_if_converged": 0.0,
+      "ler_if_not_converged": 0.020527102996544432,
+      "auroc_bp_nonconv_fail": [
+        0.5155851443730232,
+        0.5142972923294332,
+        0.5167570195216691
+      ],
+      "auroc_bp_nonconv_ben": [
+        0.5155281081630578,
+        0.5143056068928763,
+        0.5167356964417887
+      ],
+      "auroc_dh_fail": [
+        0.9582118197353464,
+        0.9507127449518981,
+        0.9649975716235202
+      ],
+      "auroc_dh_fail_on_nonconv": [
+        0.9568673629852172,
+        0.9493381166986647,
+        0.9640753908710294
+      ],
+      "natural_escalate_nonconv": {
+        "f_esc": 0.96945,
+        "ler_k1000": 0.00475,
+        "ler_ci": [
+          0.003887551207100894,
+          0.005802667495690674
+        ],
+        "rec": 0.9588607594936708,
+        "ler_osd0": 0.0199,
+        "ler_k1000_all": 0.00475
+      },
+      "note": "Score is 1 - BP@20.converge (non-convergence = high risk). The flag is binary and not-converged is the majority class at these p, so it cannot implement a 10-30% budget."
+    },
+    "holdout": {
+      "folds": [
+        {
+          "fold": "seeds_first20_cal",
+          "n_cal": 10000,
+          "n_test": 10000,
+          "cal_seeds": [
+            4000,
+            4001,
+            4002,
+            4003,
+            4004,
+            4005,
+            4006,
+            4007,
+            4008,
+            4009,
+            4010,
+            4011,
+            4012,
+            4013,
+            4014,
+            4015,
+            4016,
+            4017,
+            4018,
+            4019
+          ],
+          "test_seeds": [
+            4020,
+            4021,
+            4022,
+            4023,
+            4024,
+            4025,
+            4026,
+            4027,
+            4028,
+            4029,
+            4030,
+            4031,
+            4032,
+            4033,
+            4034,
+            4035,
+            4036,
+            4037,
+            4038,
+            4039
+          ],
+          "points": [
+            {
+              "f_target": 0.1,
+              "tau_cal": 27.0,
+              "f_esc_test": 0.0996,
+              "ler_holdout": 0.0079,
+              "ler_holdout_ci": [
+                0.006343852780347133,
+                0.009834092300270698
+              ],
+              "rec_holdout": 0.7924528301886792,
+              "ler_oracle_topk": 0.0079,
+              "ler_oracle_ci": [
+                0.006343852780347133,
+                0.009834092300270698
+              ],
+              "rec_oracle": 0.7924528301886792,
+              "delta_ler_holdout_minus_oracle": 0.0,
+              "n_test": 10000,
+              "n_fail_holdout": 79,
+              "ler_osd0_test": 0.0205,
+              "ler_full_test": 0.0046
+            },
+            {
+              "f_target": 0.2,
+              "tau_cal": 21.0,
+              "f_esc_test": 0.2145,
+              "ler_holdout": 0.0053,
+              "ler_holdout_ci": [
+                0.0040545030378426996,
+                0.006925438907659515
+              ],
+              "rec_holdout": 0.9559748427672956,
+              "ler_oracle_topk": 0.0054,
+              "ler_oracle_ci": [
+                0.00414129736628239,
+                0.0070385677767242725
+              ],
+              "rec_oracle": 0.949685534591195,
+              "delta_ler_holdout_minus_oracle": -0.00010000000000000026,
+              "n_test": 10000,
+              "n_fail_holdout": 53,
+              "ler_osd0_test": 0.0205,
+              "ler_full_test": 0.0046
+            },
+            {
+              "f_target": 0.3,
+              "tau_cal": 18.0,
+              "f_esc_test": 0.3038,
+              "ler_holdout": 0.005,
+              "ler_holdout_ci": [
+                0.003794881950804586,
+                0.006585290402184288
+              ],
+              "rec_holdout": 0.9748427672955974,
+              "ler_oracle_topk": 0.005,
+              "ler_oracle_ci": [
+                0.003794881950804586,
+                0.006585290402184288
+              ],
+              "rec_oracle": 0.9748427672955974,
+              "delta_ler_holdout_minus_oracle": 0.0,
+              "n_test": 10000,
+              "n_fail_holdout": 50,
+              "ler_osd0_test": 0.0205,
+              "ler_full_test": 0.0046
+            }
+          ]
+        },
+        {
+          "fold": "seeds_last20_cal",
+          "n_cal": 10000,
+          "n_test": 10000,
+          "cal_seeds": [
+            4020,
+            4021,
+            4022,
+            4023,
+            4024,
+            4025,
+            4026,
+            4027,
+            4028,
+            4029,
+            4030,
+            4031,
+            4032,
+            4033,
+            4034,
+            4035,
+            4036,
+            4037,
+            4038,
+            4039
+          ],
+          "test_seeds": [
+            4000,
+            4001,
+            4002,
+            4003,
+            4004,
+            4005,
+            4006,
+            4007,
+            4008,
+            4009,
+            4010,
+            4011,
+            4012,
+            4013,
+            4014,
+            4015,
+            4016,
+            4017,
+            4018,
+            4019
+          ],
+          "points": [
+            {
+              "f_target": 0.1,
+              "tau_cal": 26.0,
+              "f_esc_test": 0.1141,
+              "ler_holdout": 0.0062,
+              "ler_holdout_ci": [
+                0.004839762883673736,
+                0.007939487839368499
+              ],
+              "rec_holdout": 0.8343949044585987,
+              "ler_oracle_topk": 0.0065,
+              "ler_oracle_ci": [
+                0.005103392041684965,
+                0.00827562827387061
+              ],
+              "rec_oracle": 0.8152866242038217,
+              "delta_ler_holdout_minus_oracle": -0.0002999999999999999,
+              "n_test": 10000,
+              "n_fail_holdout": 62,
+              "ler_osd0_test": 0.0193,
+              "ler_full_test": 0.0036
+            },
+            {
+              "f_target": 0.2,
+              "tau_cal": 21.0,
+              "f_esc_test": 0.22,
+              "ler_holdout": 0.0052,
+              "ler_holdout_ci": [
+                0.003967833312748148,
+                0.006812185435249619
+              ],
+              "rec_holdout": 0.8980891719745223,
+              "ler_oracle_topk": 0.0054,
+              "ler_oracle_ci": [
+                0.00414129736628239,
+                0.0070385677767242725
+              ],
+              "rec_oracle": 0.8853503184713375,
+              "delta_ler_holdout_minus_oracle": -0.00020000000000000052,
+              "n_test": 10000,
+              "n_fail_holdout": 52,
+              "ler_osd0_test": 0.0193,
+              "ler_full_test": 0.0036
+            },
+            {
+              "f_target": 0.3,
+              "tau_cal": 18.0,
+              "f_esc_test": 0.311,
+              "ler_holdout": 0.005,
+              "ler_holdout_ci": [
+                0.003794881950804586,
+                0.006585290402184288
+              ],
+              "rec_holdout": 0.9108280254777069,
+              "ler_oracle_topk": 0.0051,
+              "ler_oracle_ci": [
+                0.003881291717961065,
+                0.006698803832532257
+              ],
+              "rec_oracle": 0.9044585987261146,
+              "delta_ler_holdout_minus_oracle": -0.00010000000000000026,
+              "n_test": 10000,
+              "n_fail_holdout": 50,
+              "ler_osd0_test": 0.0193,
+              "ler_full_test": 0.0036
+            }
+          ]
+        }
+      ],
+      "mean_over_folds": [
+        {
+          "f_target": 0.1,
+          "tau_cal_mean": 26.5,
+          "f_esc_test_mean": 0.10685,
+          "ler_holdout_mean": 0.007050000000000001,
+          "ler_oracle_mean": 0.0072,
+          "rec_holdout_mean": 0.8134238673236389,
+          "rec_oracle_mean": 0.8038697271962505,
+          "delta_ler_mean": -0.00014999999999999996
+        },
+        {
+          "f_target": 0.2,
+          "tau_cal_mean": 21.0,
+          "f_esc_test_mean": 0.21725,
+          "ler_holdout_mean": 0.0052499999999999995,
+          "ler_oracle_mean": 0.0054,
+          "rec_holdout_mean": 0.927032007370909,
+          "rec_oracle_mean": 0.9175179265312663,
+          "delta_ler_mean": -0.0001500000000000004
+        },
+        {
+          "f_target": 0.3,
+          "tau_cal_mean": 18.0,
+          "f_esc_test_mean": 0.3074,
+          "ler_holdout_mean": 0.005,
+          "ler_oracle_mean": 0.005050000000000001,
+          "rec_holdout_mean": 0.9428353963866521,
+          "rec_oracle_mean": 0.939650683010856,
+          "delta_ler_mean": -5.000000000000013e-05
+        }
+      ]
+    }
+  },
+  "0.008": {
+    "bp_flag": {
+      "n": 20000,
+      "n_converged": 136,
+      "frac_converged": 0.0068,
+      "n_not_converged": 19864,
+      "frac_not_converged": 0.9932,
+      "n_fail_osd0": 1255,
+      "n_fail_among_converged": 0,
+      "n_fail_among_not_converged": 1255,
+      "ler_if_converged": 0.0,
+      "ler_if_not_converged": 0.06317962142569472,
+      "auroc_bp_nonconv_fail": [
+        0.5036276340357428,
+        0.5030075566762332,
+        0.5042923491881847
+      ],
+      "auroc_bp_nonconv_ben": [
+        0.5035631942988891,
+        0.5029548062005317,
+        0.5041427356954838
+      ],
+      "auroc_dh_fail": [
+        0.9366583598919871,
+        0.9306052753041087,
+        0.9424167040763716
+      ],
+      "auroc_dh_fail_on_nonconv": [
+        0.9361954407101563,
+        0.9302137988878171,
+        0.9424845706386235
+      ],
+      "natural_escalate_nonconv": {
+        "f_esc": 0.9932,
+        "ler_k1000": 0.0204,
+        "ler_ci": [
+          0.018530920062103766,
+          0.022453287691270966
+        ],
+        "rec": 0.9603174603174602,
+        "ler_osd0": 0.06275,
+        "ler_k1000_all": 0.0204
+      },
+      "note": "Score is 1 - BP@20.converge (non-convergence = high risk). The flag is binary and not-converged is the majority class at these p, so it cannot implement a 10-30% budget."
+    },
+    "holdout": {
+      "folds": [
+        {
+          "fold": "seeds_first20_cal",
+          "n_cal": 10000,
+          "n_test": 10000,
+          "cal_seeds": [
+            2000,
+            2001,
+            2002,
+            2003,
+            2004,
+            2005,
+            2006,
+            2007,
+            2008,
+            2009,
+            2010,
+            2011,
+            2012,
+            2013,
+            2014,
+            2015,
+            2016,
+            2017,
+            2018,
+            2019
+          ],
+          "test_seeds": [
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026,
+            2027,
+            2028,
+            2029,
+            2030,
+            2031,
+            2032,
+            2033,
+            2034,
+            2035,
+            2036,
+            2037,
+            2038,
+            2039
+          ],
+          "points": [
+            {
+              "f_target": 0.1,
+              "tau_cal": 40.0,
+              "f_esc_test": 0.0981,
+              "ler_holdout": 0.0323,
+              "ler_holdout_ci": [
+                0.029010420634177962,
+                0.03594878463752486
+              ],
+              "rec_holdout": 0.6829268292682927,
+              "ler_oracle_topk": 0.0321,
+              "ler_oracle_ci": [
+                0.028820865343941876,
+                0.03573849353275203
+              ],
+              "rec_oracle": 0.6873614190687363,
+              "delta_ler_holdout_minus_oracle": 0.00020000000000000573,
+              "n_test": 10000,
+              "n_fail_holdout": 323,
+              "ler_osd0_test": 0.0631,
+              "ler_full_test": 0.018
+            },
+            {
+              "f_target": 0.2,
+              "tau_cal": 32.0,
+              "f_esc_test": 0.2081,
+              "ler_holdout": 0.0241,
+              "ler_holdout_ci": [
+                0.021271927639023674,
+                0.027293575437314515
+              ],
+              "rec_holdout": 0.8647450110864746,
+              "ler_oracle_topk": 0.0244,
+              "ler_oracle_ci": [
+                0.02155367036905194,
+                0.027611602299799594
+              ],
+              "rec_oracle": 0.8580931263858093,
+              "delta_ler_holdout_minus_oracle": -0.00030000000000000165,
+              "n_test": 10000,
+              "n_fail_holdout": 241,
+              "ler_osd0_test": 0.0631,
+              "ler_full_test": 0.018
+            },
+            {
+              "f_target": 0.3,
+              "tau_cal": 27.0,
+              "f_esc_test": 0.3191,
+              "ler_holdout": 0.0214,
+              "ler_holdout_ci": [
+                0.018741996184608804,
+                0.024425580559109324
+              ],
+              "rec_holdout": 0.9246119733924612,
+              "ler_oracle_topk": 0.0216,
+              "ler_oracle_ci": [
+                0.01892902163894225,
+                0.024638401499784773
+              ],
+              "rec_oracle": 0.9201773835920177,
+              "delta_ler_holdout_minus_oracle": -0.00020000000000000226,
+              "n_test": 10000,
+              "n_fail_holdout": 214,
+              "ler_osd0_test": 0.0631,
+              "ler_full_test": 0.018
+            }
+          ]
+        },
+        {
+          "fold": "seeds_last20_cal",
+          "n_cal": 10000,
+          "n_test": 10000,
+          "cal_seeds": [
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025,
+            2026,
+            2027,
+            2028,
+            2029,
+            2030,
+            2031,
+            2032,
+            2033,
+            2034,
+            2035,
+            2036,
+            2037,
+            2038,
+            2039
+          ],
+          "test_seeds": [
+            2000,
+            2001,
+            2002,
+            2003,
+            2004,
+            2005,
+            2006,
+            2007,
+            2008,
+            2009,
+            2010,
+            2011,
+            2012,
+            2013,
+            2014,
+            2015,
+            2016,
+            2017,
+            2018,
+            2019
+          ],
+          "points": [
+            {
+              "f_target": 0.1,
+              "tau_cal": 39.0,
+              "f_esc_test": 0.11,
+              "ler_holdout": 0.0326,
+              "ler_holdout_ci": [
+                0.029294819669953006,
+                0.03626415519426315
+              ],
+              "rec_holdout": 0.691415313225058,
+              "ler_oracle_topk": 0.0338,
+              "ler_oracle_ci": [
+                0.03043318947154386,
+                0.03752486376272565
+              ],
+              "rec_oracle": 0.6635730858468678,
+              "delta_ler_holdout_minus_oracle": -0.0011999999999999997,
+              "n_test": 10000,
+              "n_fail_holdout": 326,
+              "ler_osd0_test": 0.0624,
+              "ler_full_test": 0.0193
+            },
+            {
+              "f_target": 0.2,
+              "tau_cal": 32.0,
+              "f_esc_test": 0.2085,
+              "ler_holdout": 0.0254,
+              "ler_holdout_ci": [
+                0.022493663104526926,
+                0.028670841539369073
+              ],
+              "rec_holdout": 0.8584686774941995,
+              "ler_oracle_topk": 0.0257,
+              "ler_oracle_ci": [
+                0.022775908181537578,
+                0.028988366054871765
+              ],
+              "rec_oracle": 0.8515081206496519,
+              "delta_ler_holdout_minus_oracle": -0.00030000000000000165,
+              "n_test": 10000,
+              "n_fail_holdout": 254,
+              "ler_osd0_test": 0.0624,
+              "ler_full_test": 0.0193
+            },
+            {
+              "f_target": 0.3,
+              "tau_cal": 27.0,
+              "f_esc_test": 0.3146,
+              "ler_holdout": 0.0227,
+              "ler_holdout_ci": [
+                0.019958772038196758,
+                0.02580780627307918
+              ],
+              "rec_holdout": 0.9211136890951276,
+              "ler_oracle_topk": 0.0229,
+              "ler_oracle_ci": [
+                0.02014619472913465,
+                0.026020229977150183
+              ],
+              "rec_oracle": 0.9164733178654291,
+              "delta_ler_holdout_minus_oracle": -0.0001999999999999988,
+              "n_test": 10000,
+              "n_fail_holdout": 227,
+              "ler_osd0_test": 0.0624,
+              "ler_full_test": 0.0193
+            }
+          ]
+        }
+      ],
+      "mean_over_folds": [
+        {
+          "f_target": 0.1,
+          "tau_cal_mean": 39.5,
+          "f_esc_test_mean": 0.10405,
+          "ler_holdout_mean": 0.03245,
+          "ler_oracle_mean": 0.03294999999999999,
+          "rec_holdout_mean": 0.6871710712466754,
+          "rec_oracle_mean": 0.675467252457802,
+          "delta_ler_mean": -0.000499999999999997
+        },
+        {
+          "f_target": 0.2,
+          "tau_cal_mean": 32.0,
+          "f_esc_test_mean": 0.20829999999999999,
+          "ler_holdout_mean": 0.02475,
+          "ler_oracle_mean": 0.025050000000000003,
+          "rec_holdout_mean": 0.8616068442903371,
+          "rec_oracle_mean": 0.8548006235177306,
+          "delta_ler_mean": -0.00030000000000000165
+        },
+        {
+          "f_target": 0.3,
+          "tau_cal_mean": 27.0,
+          "f_esc_test_mean": 0.31684999999999997,
+          "ler_holdout_mean": 0.02205,
+          "ler_oracle_mean": 0.02225,
+          "rec_holdout_mean": 0.9228628312437943,
+          "rec_oracle_mean": 0.9183253507287235,
+          "delta_ler_mean": -0.00020000000000000052
+        }
+      ]
+    }
+  }
+}

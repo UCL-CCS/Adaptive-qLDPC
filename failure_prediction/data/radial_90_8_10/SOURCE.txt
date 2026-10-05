@@ -1,0 +1,12 @@
+Literature source
+Scruby, Hillmann, Roffe, PRX Quantum (arXiv:2406.14445)
+  "High-threshold, low-overhead and single-shot decodable fault-tolerant quantum memory"
+
+Public PCM + circuit reference implementation:
+  https://github.com/tRowans/radial-codes-public
+  git commit 12e67584db0fae3dbf8b4447596066e26ad2514c
+
+Instance: PCMs/90_8_10  (r=3, s=5)
+Family formula: n=2 r^2 s = 90, k=2(r-1)^2 = 8, d ≤ 2s = 10
+Selection reason: smallest published PCM in the paper companion repo;
+chosen before any decoder/headroom evaluation. Not a random search.

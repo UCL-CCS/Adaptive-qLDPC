@@ -1,0 +1,32 @@
+{
+  "code": "radial_90_8",
+  "r": 3,
+  "s": 5,
+  "circuit": "z_memory",
+  "rounds": 12,
+  "p": [
+    0.008,
+    0.009
+  ],
+  "K": 1000,
+  "k_free": 3289,
+  "pilot_seed_excluded": 21,
+  "decoder": {
+    "bp_method": "ms",
+    "ms_scaling_factor": 0.625,
+    "schedule": "flooding/parallel (ldpc BpOsdDecoder default)",
+    "max_iter": 20,
+    "osd0_fast_path": "if H e_BP = s return e_BP; else algebraic OSD-0 (free vars zero)",
+    "score": "S(x)=sum_{i:x_i=1} log(1/p_i) on Stim DEM channel priors",
+    "score_is_not": "exact Bernoulli ML",
+    "K": 1000,
+    "full_1fv": "all one-free-variable OSD perturbations; not exhaustive physical search",
+    "not_computed": [
+      "d_H",
+      "r_BP",
+      "routing AUROC",
+      "adaptive LER"
+    ]
+  },
+  "note": "Frozen from OSD-0 LER and 1FV headroom only. d_H not inspected."
+}

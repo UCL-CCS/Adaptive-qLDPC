@@ -1,0 +1,9 @@
+cell,count,note
+CC,214,"OSD0 correct, full1FV correct"
+CW,3,"OSD0 correct, full1FV fail (harm)"
+WC,3,"OSD0 fail, full1FV correct (rescue)"
+WW,80,both fail
+n,300,
+ler_osd0,0.27666666666666667,
+ler_full1fv,0.27666666666666667,
+net_failure_change,0,full-osd0; 0 = no net LER change

@@ -1,0 +1,52 @@
+{
+  "0.008": {
+    "n_detectors": 585,
+    "n_observables": 8,
+    "n_error_mechanisms": 3870,
+    "H_shape": [
+      585,
+      3870
+    ],
+    "rank_H": 581,
+    "k_free": 3289,
+    "K": 1000,
+    "K_eff": 1000,
+    "K_is_full_1fv": false,
+    "decompose_errors": true,
+    "circuit_path": "outputs/failure_prediction/nonbb_radial_formal/circuit_dem/circuit_p0.008.stim",
+    "dem_path": "outputs/failure_prediction/nonbb_radial_formal/circuit_dem/dem_p0.008.dem",
+    "H_sha256": "99aedb8a77c5910f0c0144b3bc550c3f71baf9a9ad09550eb007ccb6a4e703dd",
+    "error_probs_sha256": "ab64d112a6246c42424b2cdc438b46042544e193729075796d525278eaa3749f",
+    "logicals_shape": [
+      8,
+      3870
+    ],
+    "n_detectors_circuit": 585,
+    "n_observables_circuit": 8
+  },
+  "0.009": {
+    "n_detectors": 585,
+    "n_observables": 8,
+    "n_error_mechanisms": 3870,
+    "H_shape": [
+      585,
+      3870
+    ],
+    "rank_H": 581,
+    "k_free": 3289,
+    "K": 1000,
+    "K_eff": 1000,
+    "K_is_full_1fv": false,
+    "decompose_errors": true,
+    "circuit_path": "outputs/failure_prediction/nonbb_radial_formal/circuit_dem/circuit_p0.009.stim",
+    "dem_path": "outputs/failure_prediction/nonbb_radial_formal/circuit_dem/dem_p0.009.dem",
+    "H_sha256": "0139b400ff49397c2601cab36edd9c993e32577734e377fcd4ef2796264ec388",
+    "error_probs_sha256": "2ba8367ebe8c60ebaf66e42c5f3420dccd772a823ec79c3aea9400c00e4dc9dc",
+    "logicals_shape": [
+      8,
+      3870
+    ],
+    "n_detectors_circuit": 585,
+    "n_observables_circuit": 8
+  }
+}

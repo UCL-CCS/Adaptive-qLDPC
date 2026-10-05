@@ -1,0 +1,480 @@
+{
+  "construction": {
+    "family": "quantum_radial_lifted_product",
+    "literature": "Scruby, Hillmann, Roffe, arXiv:2406.14445 / PRX Quantum",
+    "reference_implementation": "https://github.com/tRowans/radial-codes-public",
+    "reference_commit": "12e67584db0fae3dbf8b4447596066e26ad2514c",
+    "pcm_dir": "PCMs/90_8_10",
+    "r": 3,
+    "s": 5,
+    "n_formula": 90,
+    "k_formula": 8,
+    "d_family_bound": 10,
+    "d": "unknown",
+    "d_note": "Source directory is named 90_8_10 and the family bound is d\u22642s=10. Distance is not independently verified in this repository.",
+    "selection_reason": "Smallest published PCM in the paper companion repository. Chosen before any decoder or headroom evaluation.",
+    "n": 90,
+    "k_from_ranks": 8,
+    "weights": {
+      "hx_shape": [
+        45,
+        90
+      ],
+      "hz_shape": [
+        45,
+        90
+      ],
+      "hx_rank": 41,
+      "hz_rank": 41,
+      "hx_row_weights": {
+        "min": 6,
+        "max": 6,
+        "mean": 6.0,
+        "unique": [
+          6
+        ]
+      },
+      "hz_row_weights": {
+        "min": 6,
+        "max": 6,
+        "mean": 6.0,
+        "unique": [
+          6
+        ]
+      },
+      "hx_col_degrees": {
+        "min": 3,
+        "max": 3,
+        "mean": 3.0,
+        "unique": [
+          3
+        ]
+      },
+      "hz_col_degrees": {
+        "min": 3,
+        "max": 3,
+        "mean": 3.0,
+        "unique": [
+          3
+        ]
+      }
+    }
+  },
+  "validation": {
+    "css_commutes": 1,
+    "published_logicals": {
+      "ok": 1,
+      "issues": [],
+      "k_x": 8,
+      "k_z": 8,
+      "pairing_rank": 8,
+      "n_anticommuting_pairs": 18
+    },
+    "pipeline_logicals": {
+      "ok": 1,
+      "issues": [],
+      "k_x": 8,
+      "k_z": 8,
+      "pairing_rank": 8,
+      "n_anticommuting_pairs": 31
+    },
+    "fullcss": {
+      "noiseless_ok": 1,
+      "quiet": {
+        "n_qubits": 180,
+        "n_meas": 1170,
+        "n_detectors": 1080,
+        "n_observables": 8,
+        "n_cx": 1080,
+        "n_1q_noise_or_h": 24,
+        "depth_ticks": 1129
+      },
+      "n_data": 90,
+      "n_x_anc": 45,
+      "n_z_anc": 45,
+      "dem_decompose_true": {
+        "ok": 1,
+        "error": null
+      }
+    },
+    "zmem": {
+      "noiseless_ok": 1,
+      "quiet": {
+        "n_qubits": 135,
+        "n_meas": 630,
+        "n_detectors": 585,
+        "n_observables": 8,
+        "n_cx": 540,
+        "n_1q_noise_or_h": 0,
+        "depth_ticks": 565
+      },
+      "n_data": 90,
+      "n_x_anc": 0,
+      "n_z_anc": 45
+    },
+    "production_circuit": "full_css_z_memory",
+    "production_dem": {
+      "n_detectors": 1080,
+      "n_observables": 8,
+      "n_error_mechanisms": 42090,
+      "H_shape": [
+        1080,
+        42090
+      ],
+      "rank_H": 1076,
+      "k_free": 41014,
+      "K": 1000,
+      "K_eff": 1000,
+      "K_is_full_1fv": 0,
+      "decompose_errors": 1
+    },
+    "blocker": []
+  },
+  "decoder_config": {
+    "bp_method": "ms",
+    "ms_scaling_factor": 0.625,
+    "schedule": "flooding/parallel (ldpc BpOsdDecoder default)",
+    "max_iter": 20,
+    "osd0_fast_path": "if H e_BP = s return e_BP; else algebraic OSD-0 (free vars zero)",
+    "score": "S(x)=sum_{i:x_i=1} log(1/p_i) on Stim DEM channel priors",
+    "score_is_not": "exact Bernoulli ML",
+    "K": 1000,
+    "full_1fv": "all one-free-variable OSD perturbations; not exhaustive physical search",
+    "not_computed": [
+      "d_H",
+      "r_BP",
+      "routing AUROC",
+      "adaptive LER"
+    ]
+  },
+  "software": {
+    "git_commit": "7af1d4b36cc3cff2c3c2bce1f1e08a47cf86d0ed",
+    "python": "3.13.11 | packaged by Anaconda, Inc. | (main, Dec 10 2025, 21:28:48) [GCC 14.3.0]",
+    "numpy": "2.4.3",
+    "stim": "1.16.0",
+    "ldpc": "2.4.1",
+    "scipy": "1.18.0"
+  },
+  "pilot_seed": 21,
+  "pilot_n": 500,
+  "rounds": 12,
+  "pilot": [
+    {
+      "p": 0.0001,
+      "n": 500,
+      "seed": 21,
+      "seconds": 132.662446975708,
+      "ms_per_shot": 265.324893951416,
+      "n_fail_osd0": 0,
+      "n_fail_k1000": 0,
+      "n_fail_full": 0,
+      "ler_osd0": 0.0,
+      "ler_k1000": 0.0,
+      "ler_full": 0.0,
+      "rel_improvement_full": null,
+      "ratio_osd0_over_full": null,
+      "he_osd0_ok": 1.0,
+      "bp_syndrome_ok": 0.484,
+      "trans_k1000": {
+        "CC": 500,
+        "CW": 0,
+        "WC": 0,
+        "WW": 0,
+        "net": 0
+      },
+      "trans_full": {
+        "CC": 500,
+        "CW": 0,
+        "WC": 0,
+        "WW": 0,
+        "net": 0
+      },
+      "meets_headroom_criterion": 0,
+      "k_free": 41014,
+      "K_eff": 1000
+    },
+    {
+      "p": 0.0003,
+      "n": 500,
+      "seed": 21,
+      "seconds": 155.96547150611877,
+      "ms_per_shot": 311.93094301223755,
+      "n_fail_osd0": 0,
+      "n_fail_k1000": 0,
+      "n_fail_full": 0,
+      "ler_osd0": 0.0,
+      "ler_k1000": 0.0,
+      "ler_full": 0.0,
+      "rel_improvement_full": null,
+      "ratio_osd0_over_full": null,
+      "he_osd0_ok": 1.0,
+      "bp_syndrome_ok": 0.438,
+      "trans_k1000": {
+        "CC": 500,
+        "CW": 0,
+        "WC": 0,
+        "WW": 0,
+        "net": 0
+      },
+      "trans_full": {
+        "CC": 500,
+        "CW": 0,
+        "WC": 0,
+        "WW": 0,
+        "net": 0
+      },
+      "meets_headroom_criterion": 0,
+      "k_free": 41014,
+      "K_eff": 1000
+    },
+    {
+      "p": 0.0005,
+      "n": 500,
+      "seed": 21,
+      "seconds": 201.86528706550598,
+      "ms_per_shot": 403.73057413101196,
+      "n_fail_osd0": 0,
+      "n_fail_k1000": 0,
+      "n_fail_full": 0,
+      "ler_osd0": 0.0,
+      "ler_k1000": 0.0,
+      "ler_full": 0.0,
+      "rel_improvement_full": null,
+      "ratio_osd0_over_full": null,
+      "he_osd0_ok": 1.0,
+      "bp_syndrome_ok": 0.27,
+      "trans_k1000": {
+        "CC": 500,
+        "CW": 0,
+        "WC": 0,
+        "WW": 0,
+        "net": 0
+      },
+      "trans_full": {
+        "CC": 500,
+        "CW": 0,
+        "WC": 0,
+        "WW": 0,
+        "net": 0
+      },
+      "meets_headroom_criterion": 0,
+      "k_free": 41014,
+      "K_eff": 1000
+    },
+    {
+      "p": 0.001,
+      "n": 500,
+      "seed": 21,
+      "seconds": 284.4233329296112,
+      "ms_per_shot": 568.8466658592224,
+      "n_fail_osd0": 5,
+      "n_fail_k1000": 4,
+      "n_fail_full": 3,
+      "ler_osd0": 0.01,
+      "ler_k1000": 0.008,
+      "ler_full": 0.006,
+      "rel_improvement_full": 0.4,
+      "ratio_osd0_over_full": 1.6666666666666667,
+      "he_osd0_ok": 1.0,
+      "bp_syndrome_ok": 0.068,
+      "trans_k1000": {
+        "CC": 494,
+        "CW": 1,
+        "WC": 2,
+        "WW": 3,
+        "net": 1
+      },
+      "trans_full": {
+        "CC": 494,
+        "CW": 1,
+        "WC": 3,
+        "WW": 2,
+        "net": 2
+      },
+      "meets_headroom_criterion": 0,
+      "k_free": 41014,
+      "K_eff": 1000
+    },
+    {
+      "p": 0.002,
+      "n": 500,
+      "seed": 21,
+      "seconds": 396.6676700115204,
+      "ms_per_shot": 793.3353400230408,
+      "n_fail_osd0": 57,
+      "n_fail_k1000": 21,
+      "n_fail_full": 22,
+      "ler_osd0": 0.114,
+      "ler_k1000": 0.042,
+      "ler_full": 0.044,
+      "rel_improvement_full": 0.6140350877192983,
+      "ratio_osd0_over_full": 2.5909090909090913,
+      "he_osd0_ok": 1.0,
+      "bp_syndrome_ok": 0.002,
+      "trans_k1000": {
+        "CC": 443,
+        "CW": 0,
+        "WC": 36,
+        "WW": 21,
+        "net": 36
+      },
+      "trans_full": {
+        "CC": 443,
+        "CW": 0,
+        "WC": 35,
+        "WW": 22,
+        "net": 35
+      },
+      "meets_headroom_criterion": 1,
+      "k_free": 41014,
+      "K_eff": 1000
+    },
+    {
+      "p": 0.003,
+      "n": 500,
+      "seed": 21,
+      "seconds": 569.451146364212,
+      "ms_per_shot": 1138.902292728424,
+      "n_fail_osd0": 158,
+      "n_fail_k1000": 103,
+      "n_fail_full": 100,
+      "ler_osd0": 0.316,
+      "ler_k1000": 0.206,
+      "ler_full": 0.2,
+      "rel_improvement_full": 0.36708860759493667,
+      "ratio_osd0_over_full": 1.5799999999999998,
+      "he_osd0_ok": 1.0,
+      "bp_syndrome_ok": 0.0,
+      "trans_k1000": {
+        "CC": 342,
+        "CW": 0,
+        "WC": 55,
+        "WW": 103,
+        "net": 55
+      },
+      "trans_full": {
+        "CC": 342,
+        "CW": 0,
+        "WC": 58,
+        "WW": 100,
+        "net": 58
+      },
+      "meets_headroom_criterion": 1,
+      "k_free": 41014,
+      "K_eff": 1000
+    },
+    {
+      "p": 0.004,
+      "n": 500,
+      "seed": 21,
+      "seconds": 848.3547673225403,
+      "ms_per_shot": 1696.7095346450806,
+      "n_fail_osd0": 319,
+      "n_fail_k1000": 253,
+      "n_fail_full": 256,
+      "ler_osd0": 0.638,
+      "ler_k1000": 0.506,
+      "ler_full": 0.512,
+      "rel_improvement_full": 0.1974921630094044,
+      "ratio_osd0_over_full": 1.24609375,
+      "he_osd0_ok": 1.0,
+      "bp_syndrome_ok": 0.0,
+      "trans_k1000": {
+        "CC": 180,
+        "CW": 1,
+        "WC": 67,
+        "WW": 252,
+        "net": 66
+      },
+      "trans_full": {
+        "CC": 179,
+        "CW": 2,
+        "WC": 65,
+        "WW": 254,
+        "net": 63
+      },
+      "meets_headroom_criterion": 0,
+      "k_free": 41014,
+      "K_eff": 1000
+    },
+    {
+      "p": 0.005,
+      "n": 500,
+      "seed": 21,
+      "seconds": 1136.1257872581482,
+      "ms_per_shot": 2272.2515745162964,
+      "n_fail_osd0": 433,
+      "n_fail_k1000": 397,
+      "n_fail_full": 394,
+      "ler_osd0": 0.866,
+      "ler_k1000": 0.794,
+      "ler_full": 0.788,
+      "rel_improvement_full": 0.09006928406466508,
+      "ratio_osd0_over_full": 1.098984771573604,
+      "he_osd0_ok": 1.0,
+      "bp_syndrome_ok": 0.0,
+      "trans_k1000": {
+        "CC": 66,
+        "CW": 1,
+        "WC": 37,
+        "WW": 396,
+        "net": 36
+      },
+      "trans_full": {
+        "CC": 66,
+        "CW": 1,
+        "WC": 40,
+        "WW": 393,
+        "net": 39
+      },
+      "meets_headroom_criterion": 0,
+      "k_free": 41014,
+      "K_eff": 1000
+    },
+    {
+      "p": 0.006,
+      "n": 500,
+      "seed": 21,
+      "seconds": 1469.683928489685,
+      "ms_per_shot": 2939.36785697937,
+      "n_fail_osd0": 475,
+      "n_fail_k1000": 463,
+      "n_fail_full": 458,
+      "ler_osd0": 0.95,
+      "ler_k1000": 0.926,
+      "ler_full": 0.916,
+      "rel_improvement_full": 0.03578947368421044,
+      "ratio_osd0_over_full": 1.0371179039301308,
+      "he_osd0_ok": 1.0,
+      "bp_syndrome_ok": 0.0,
+      "trans_k1000": {
+        "CC": 22,
+        "CW": 3,
+        "WC": 15,
+        "WW": 460,
+        "net": 12
+      },
+      "trans_full": {
+        "CC": 22,
+        "CW": 3,
+        "WC": 20,
+        "WW": 455,
+        "net": 17
+      },
+      "meets_headroom_criterion": 0,
+      "k_free": 41014,
+      "K_eff": 1000
+    }
+  ],
+  "go_nogo": {
+    "formal_test_ready": "YES",
+    "reason": "GO: published radial code/circuit/DEM validated; full 1FV feasible; at least one p meets the pre-registered headroom criterion. Ready for a later d_H test. d_H was not inspected.",
+    "points_meeting_criterion": [
+      0.002,
+      0.003
+    ],
+    "frozen_p": [
+      0.002
+    ]
+  }
+}
